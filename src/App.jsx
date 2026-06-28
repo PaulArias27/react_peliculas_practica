@@ -25,13 +25,15 @@ function Pelicula({titulo}){
 
 function App() {
  
-
+  const peliculas = ["Interestelar", "Batman", "Superman"]
+  const [peliculas, setPeliculas] = useState([]);
   return (
-    <div>
+    <div style={{ padding: "30px", fontFamily: "Arial" }}>
       <h1>Mis Películas Favoritas</h1>
-    <Pelicula titulo='Interestelar'/>
-    <Pelicula titulo='Batman'/>
 
+      {peliculas.map((pelicula,index) => (
+        <Pelicula key={index} titulo={pelicula}/>
+      ))}
     </div>
   )
 }
