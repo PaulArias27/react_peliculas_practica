@@ -25,11 +25,45 @@ function Pelicula({titulo}){
 
 function App() {
  
-  const peliculas = ["Interestelar", "Batman", "Superman"]
-  const [peliculas, setPeliculas] = useState([]);
+  const [peliculas, setPeliculas] = useState(["Interestelar", "Batman", "Superman"]);
+  const [nuevaPelicula, setNuevaPelicula] = useState("");
+  const agregarPelicula = () =>{
+    if(nuevaPelicula.trim() === ""){
+      return;
+    }else{
+      setPeliculas([...peliculas, nuevaPelicula]);
+      setNuevaPelicula("");
+    }
+  }
+
   return (
     <div style={{ padding: "30px", fontFamily: "Arial" }}>
       <h1>Mis Películas Favoritas</h1>
+
+      <div style={{ marginBottom: "20px" }}>
+        <input type='text' 
+              value={nuevaPelicula} 
+              onChange={(e) => setNuevaPelicula(e.target.value)}
+              placeholder='Escribe una pelicula...'
+              style={{
+            padding: "8px",
+            marginRight: "10px",
+            width: "250px",
+          }}
+          onKeyDown={(e) =>{
+            if(e.key === "Enter"){
+              agregarPelicula();
+            }
+          }}>
+        </input>
+
+        <button onClick={agregarPelicula} style={{
+            padding: "8px 15px",
+            cursor: "pointer",
+          }}>
+          Agregar
+        </button>
+      </div>
 
       {peliculas.map((pelicula,index) => (
         <Pelicula key={index} titulo={pelicula}/>
