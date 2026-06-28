@@ -1,16 +1,47 @@
-# React + Vite
+# 🎬 App Lista de Películas Favoritas (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Proyecto práctico en React donde se construye una aplicación para gestionar una lista de películas favoritas.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Tecnologías
+- React
+- JavaScript (ES6+)
+- Vite
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📌 Funcionalidades
 
-## Expanding the Oxlint configuration
+- Mostrar lista de películas
+- Marcar/desmarcar como favorita ⭐
+- Agregar nuevas películas
+- Agregar con botón o tecla ENTER
+- Input controlado
+- Renderizado dinámico con `map()`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+---
+
+## 🧠 Conceptos practicados
+
+- Componentes en React
+- Props
+- useState
+- Eventos (onClick, onChange, onKeyDown)
+- Renderizado de listas
+- Renderizado condicional
+- Manejo de estado inmutable
+
+---
+
+## 🏗️ Estructura del proyecto
+
+- `App.jsx`: lógica principal
+- `Pelicula`: componente reutilizable
+
+---
+
+## ➕ Lógica para agregar película
+
+```js
+setPeliculas([...peliculas, nuevaPelicula]);
